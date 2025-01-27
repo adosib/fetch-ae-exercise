@@ -1,0 +1,89 @@
+{
+  "_id": {
+    "types": [
+      "object"
+    ],
+    "frequency": 1167,
+    "nested": {
+      "$oid": {
+        "types": [
+          "string"
+        ],
+        "frequency": 1167,
+        "nested": null
+      }
+    }
+  },
+  "barcode": {
+    "types": [
+      "string"
+    ],
+    "frequency": 1167,
+    "nested": null
+  },
+  "category": {
+    "types": [
+      "string"
+    ],
+    "frequency": 1012,
+    "nested": null
+  },
+  "categoryCode": {
+    "types": [
+      "string"
+    ],
+    "frequency": 517,
+    "nested": null
+  },
+  "cpg": {
+    "types": [
+      "object"
+    ],
+    "frequency": 1167,
+    "nested": {
+      "$id": {
+        "types": [
+          "object"
+        ],
+        "frequency": 1167,
+        "nested": {
+          "$oid": {
+            "types": [
+              "string"
+            ],
+            "frequency": 1167,
+            "nested": null
+          }
+        }
+      },
+      "$ref": {
+        "types": [
+          "string"
+        ],
+        "frequency": 1167,
+        "nested": null
+      }
+    }
+  },
+  "name": {
+    "types": [
+      "string"
+    ],
+    "frequency": 1167,
+    "nested": null
+  },
+  "topBrand": {
+    "types": [
+      "boolean"
+    ],
+    "frequency": 555,
+    "nested": null
+  },
+  "brandCode": {
+    "types": [
+      "string"
+    ],
+    "frequency": 933,
+    "nested": null
+  }
+}

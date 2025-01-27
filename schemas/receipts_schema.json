@@ -1,0 +1,402 @@
+{
+  "_id": {
+    "types": [
+      "object"
+    ],
+    "frequency": 1119,
+    "nested": {
+      "$oid": {
+        "types": [
+          "string"
+        ],
+        "frequency": 1119,
+        "nested": null
+      }
+    }
+  },
+  "bonusPointsEarned": {
+    "types": [
+      "integer"
+    ],
+    "frequency": 544,
+    "nested": null
+  },
+  "bonusPointsEarnedReason": {
+    "types": [
+      "string"
+    ],
+    "frequency": 544,
+    "nested": null
+  },
+  "createDate": {
+    "types": [
+      "object"
+    ],
+    "frequency": 1119,
+    "nested": {
+      "$date": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 1119,
+        "nested": null
+      }
+    }
+  },
+  "dateScanned": {
+    "types": [
+      "object"
+    ],
+    "frequency": 1119,
+    "nested": {
+      "$date": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 1119,
+        "nested": null
+      }
+    }
+  },
+  "finishedDate": {
+    "types": [
+      "object"
+    ],
+    "frequency": 568,
+    "nested": {
+      "$date": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 568,
+        "nested": null
+      }
+    }
+  },
+  "modifyDate": {
+    "types": [
+      "object"
+    ],
+    "frequency": 1119,
+    "nested": {
+      "$date": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 1119,
+        "nested": null
+      }
+    }
+  },
+  "pointsAwardedDate": {
+    "types": [
+      "object"
+    ],
+    "frequency": 537,
+    "nested": {
+      "$date": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 537,
+        "nested": null
+      }
+    }
+  },
+  "pointsEarned": {
+    "types": [
+      "string"
+    ],
+    "frequency": 609,
+    "nested": null
+  },
+  "purchaseDate": {
+    "types": [
+      "object"
+    ],
+    "frequency": 671,
+    "nested": {
+      "$date": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 671,
+        "nested": null
+      }
+    }
+  },
+  "purchasedItemCount": {
+    "types": [
+      "integer"
+    ],
+    "frequency": 635,
+    "nested": null
+  },
+  "rewardsReceiptItemList": {
+    "types": [
+      "array"
+    ],
+    "frequency": 679,
+    "nested": {
+      "barcode": {
+        "types": [
+          "string"
+        ],
+        "frequency": 3090,
+        "nested": null
+      },
+      "description": {
+        "types": [
+          "string"
+        ],
+        "frequency": 6560,
+        "nested": null
+      },
+      "finalPrice": {
+        "types": [
+          "string"
+        ],
+        "frequency": 6767,
+        "nested": null
+      },
+      "itemPrice": {
+        "types": [
+          "string"
+        ],
+        "frequency": 6767,
+        "nested": null
+      },
+      "needsFetchReview": {
+        "types": [
+          "boolean"
+        ],
+        "frequency": 813,
+        "nested": null
+      },
+      "partnerItemId": {
+        "types": [
+          "string"
+        ],
+        "frequency": 6941,
+        "nested": null
+      },
+      "preventTargetGapPoints": {
+        "types": [
+          "boolean"
+        ],
+        "frequency": 358,
+        "nested": null
+      },
+      "quantityPurchased": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 6767,
+        "nested": null
+      },
+      "userFlaggedBarcode": {
+        "types": [
+          "string"
+        ],
+        "frequency": 337,
+        "nested": null
+      },
+      "userFlaggedNewItem": {
+        "types": [
+          "boolean"
+        ],
+        "frequency": 323,
+        "nested": null
+      },
+      "userFlaggedPrice": {
+        "types": [
+          "string"
+        ],
+        "frequency": 299,
+        "nested": null
+      },
+      "userFlaggedQuantity": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 299,
+        "nested": null
+      },
+      "needsFetchReviewReason": {
+        "types": [
+          "string"
+        ],
+        "frequency": 219,
+        "nested": null
+      },
+      "pointsNotAwardedReason": {
+        "types": [
+          "string"
+        ],
+        "frequency": 340,
+        "nested": null
+      },
+      "pointsPayerId": {
+        "types": [
+          "string"
+        ],
+        "frequency": 1267,
+        "nested": null
+      },
+      "rewardsGroup": {
+        "types": [
+          "string"
+        ],
+        "frequency": 1731,
+        "nested": null
+      },
+      "rewardsProductPartnerId": {
+        "types": [
+          "string"
+        ],
+        "frequency": 2269,
+        "nested": null
+      },
+      "userFlaggedDescription": {
+        "types": [
+          "string"
+        ],
+        "frequency": 205,
+        "nested": null
+      },
+      "originalMetaBriteBarcode": {
+        "types": [
+          "string"
+        ],
+        "frequency": 71,
+        "nested": null
+      },
+      "originalMetaBriteDescription": {
+        "types": [
+          "string"
+        ],
+        "frequency": 10,
+        "nested": null
+      },
+      "brandCode": {
+        "types": [
+          "string"
+        ],
+        "frequency": 2600,
+        "nested": null
+      },
+      "competitorRewardsGroup": {
+        "types": [
+          "string"
+        ],
+        "frequency": 275,
+        "nested": null
+      },
+      "discountedItemPrice": {
+        "types": [
+          "string"
+        ],
+        "frequency": 5769,
+        "nested": null
+      },
+      "originalReceiptItemText": {
+        "types": [
+          "string"
+        ],
+        "frequency": 5760,
+        "nested": null
+      },
+      "itemNumber": {
+        "types": [
+          "string"
+        ],
+        "frequency": 153,
+        "nested": null
+      },
+      "originalMetaBriteQuantityPurchased": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 15,
+        "nested": null
+      },
+      "pointsEarned": {
+        "types": [
+          "string"
+        ],
+        "frequency": 927,
+        "nested": null
+      },
+      "targetPrice": {
+        "types": [
+          "string"
+        ],
+        "frequency": 378,
+        "nested": null
+      },
+      "competitiveProduct": {
+        "types": [
+          "boolean"
+        ],
+        "frequency": 645,
+        "nested": null
+      },
+      "originalFinalPrice": {
+        "types": [
+          "string"
+        ],
+        "frequency": 9,
+        "nested": null
+      },
+      "originalMetaBriteItemPrice": {
+        "types": [
+          "string"
+        ],
+        "frequency": 9,
+        "nested": null
+      },
+      "deleted": {
+        "types": [
+          "boolean"
+        ],
+        "frequency": 9,
+        "nested": null
+      },
+      "priceAfterCoupon": {
+        "types": [
+          "string"
+        ],
+        "frequency": 956,
+        "nested": null
+      },
+      "metabriteCampaignId": {
+        "types": [
+          "string"
+        ],
+        "frequency": 863,
+        "nested": null
+      }
+    }
+  },
+  "rewardsReceiptStatus": {
+    "types": [
+      "string"
+    ],
+    "frequency": 1119,
+    "nested": null
+  },
+  "totalSpent": {
+    "types": [
+      "string"
+    ],
+    "frequency": 684,
+    "nested": null
+  },
+  "userId": {
+    "types": [
+      "string"
+    ],
+    "frequency": 1119,
+    "nested": null
+  }
+}

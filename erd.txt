@@ -1,0 +1,47 @@
+@startuml
+entity Receipts {
+    *id: uuid
+    bonusPointsEarned: Number
+    bonusPointsEarnedReason: String
+    createDate: Date
+    dateScanned: Date
+    finishedDate: Date
+    modifyDate: Date
+    pointsAwardedDate: Date
+    pointsEarned: Number
+    purchaseDate: Date
+    purchasedItemCount: Number
+    rewardsReceiptStatus: String
+    totalSpent: Number
+    *userId: String
+}
+
+entity receipt_items {
+    *id: uuid
+    *receiptId: uuid
+    itemDetails: JSON
+}
+
+entity Users {
+    *id: String
+    state: String
+    createdDate: Date
+    lastLogin: Date
+    role: String
+    active: Boolean
+}
+
+entity Brand {
+    *id: uuid
+    barcode: String
+    brandCode: String
+    category: String
+    categoryCode: String
+    cpg: String
+    topBrand: Boolean
+    name: String
+}
+
+Receipts }|--|| Users : userId
+Receipts ||--o{ receipt_items : receiptId
+@enduml

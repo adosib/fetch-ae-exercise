@@ -1,0 +1,75 @@
+{
+  "_id": {
+    "types": [
+      "object"
+    ],
+    "frequency": 495,
+    "nested": {
+      "$oid": {
+        "types": [
+          "string"
+        ],
+        "frequency": 495,
+        "nested": null
+      }
+    }
+  },
+  "active": {
+    "types": [
+      "boolean"
+    ],
+    "frequency": 495,
+    "nested": null
+  },
+  "createdDate": {
+    "types": [
+      "object"
+    ],
+    "frequency": 495,
+    "nested": {
+      "$date": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 495,
+        "nested": null
+      }
+    }
+  },
+  "lastLogin": {
+    "types": [
+      "object"
+    ],
+    "frequency": 433,
+    "nested": {
+      "$date": {
+        "types": [
+          "integer"
+        ],
+        "frequency": 433,
+        "nested": null
+      }
+    }
+  },
+  "role": {
+    "types": [
+      "string"
+    ],
+    "frequency": 495,
+    "nested": null
+  },
+  "signUpSource": {
+    "types": [
+      "string"
+    ],
+    "frequency": 447,
+    "nested": null
+  },
+  "state": {
+    "types": [
+      "string"
+    ],
+    "frequency": 439,
+    "nested": null
+  }
+}
