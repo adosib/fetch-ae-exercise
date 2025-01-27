@@ -1,3 +1,18 @@
+"""
+This script loads the data into the database.
+Expects that the database is set up already (see ddl.sql)
+and that there are unzipped JSON source files at the project root subfolder data/ i.e.:
+- data/users.json
+- data/brands.json
+- data/receipts.json
+
+To generate those files, you can run infer_schema.py which will additionally create
+the JSON schema files:
+- schemas/users_schema.json
+- schemas/brands_schema.json
+- schemas/receipts_schema.json
+"""
+
 import sys
 import json
 import logging
