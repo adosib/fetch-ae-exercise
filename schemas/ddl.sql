@@ -36,12 +36,12 @@ DROP TABLE IF EXISTS fetchdb.public.receipts CASCADE; CREATE TABLE fetchdb.publi
     purchased_item_count TEXT,
     rewards_receipt_status TEXT NOT NULL,
     total_spent TEXT,
-    user_id TEXT REFERENCES users (id) ON DELETE CASCADE
+    user_id TEXT
 );
 
 DROP TABLE IF EXISTS fetchdb.public.receipt_items; CREATE TABLE fetchdb.public.receipt_items (
     receipt_id TEXT REFERENCES receipts (id) ON DELETE CASCADE,
-    barcode TEXT REFERENCES brands (barcode),
+    barcode TEXT,
     description TEXT,
     final_price TEXT,
     item_price TEXT,
