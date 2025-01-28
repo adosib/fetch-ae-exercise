@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS fetchdb.public.users CASCADE; CREATE TABLE fetchdb.public.u
 
 DROP TABLE IF EXISTS fetchdb.public.brands CASCADE; CREATE TABLE fetchdb.public.brands (
     id TEXT PRIMARY KEY,
-    barcode TEXT UNIQUE NOT NULL,
+    barcode TEXT NOT NULL,
     category TEXT,
     category_code TEXT,
     cpg_id TEXT NOT NULL,
