@@ -40,6 +40,7 @@ DROP TABLE IF EXISTS fetchdb.public.receipts CASCADE; CREATE TABLE fetchdb.publi
 );
 
 DROP TABLE IF EXISTS fetchdb.public.receipt_items; CREATE TABLE fetchdb.public.receipt_items (
+    id SERIAL PRIMARY KEY,
     receipt_id TEXT REFERENCES receipts (id) ON DELETE CASCADE,
     barcode TEXT,
     description TEXT,
