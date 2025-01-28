@@ -1,0 +1,111 @@
+@startuml
+' Define entities
+entity users {
+    *id : TEXT
+    --
+    active : BOOLEAN
+    created_date : TIMESTAMP
+    last_login : TIMESTAMP
+    user_role : TEXT
+    sign_up_source : TEXT
+    state : TEXT
+}
+
+entity brands {
+    *id : TEXT
+    --
+    barcode : TEXT
+    category : TEXT
+    category_code : TEXT
+    cpg_id : TEXT
+    cpg_ref : TEXT
+    name : TEXT
+    top_brand : BOOLEAN
+    brand_code : TEXT
+}
+
+entity receipts {
+    *id : TEXT
+    --
+    bonus_points_earned : TEXT
+    bonus_points_earned_reason : TEXT
+    create_date : TIMESTAMP
+    date_scanned : TIMESTAMP
+    finished_date : TIMESTAMP
+    modify_date : TIMESTAMP
+    points_awarded_date : TIMESTAMP
+    points_earned : TEXT
+    purchase_date : TIMESTAMP
+    purchased_item_count : TEXT
+    rewards_receipt_status : TEXT
+    total_spent : TEXT
+    user_id : TEXT
+}
+
+entity receipt_items {
+    *id : SERIAL
+    --
+    receipt_id : TEXT
+    barcode : TEXT
+    description : TEXT
+    final_price : TEXT
+    item_price : TEXT
+    needs_fetch_review : BOOLEAN
+    partner_item_id : TEXT
+    prevent_target_gap_points : BOOLEAN
+    quantity_purchased : TEXT
+    user_flagged_barcode : TEXT
+    user_flagged_new_item : BOOLEAN
+    user_flagged_price : TEXT
+    user_flagged_quantity : TEXT
+    needs_fetch_review_reason : TEXT
+    points_not_awarded_reason : TEXT
+    points_payer_id : TEXT
+    rewards_group : TEXT
+    rewards_product_partner_id : TEXT
+    user_flagged_description : TEXT
+    original_meta_brite_barcode : TEXT
+    original_meta_brite_description : TEXT
+    brand_code : TEXT
+    competitor_rewards_group : TEXT
+    discounted_item_price : TEXT
+    original_receipt_item_text : TEXT
+    item_number : TEXT
+    original_meta_brite_quantity_purchased : TEXT
+    points_earned : TEXT
+    target_price : TEXT
+    competitive_product : BOOLEAN
+    original_final_price : TEXT
+    original_meta_brite_item_price : TEXT
+    deleted : BOOLEAN
+    price_after_coupon : TEXT
+    metabrite_campaign_id : TEXT
+}
+
+' Define relationships
+users ||--o{ receipts : "user_id"
+receipts ||--o{ receipt_items : "receipt_id"
+brands }o--o| receipt_items : "brand_code"
+
+' Add notes for clarity
+note right of users
+  Primary Key: id
+end note
+
+note right of brands
+  Primary Key: id
+  Should-be Unique (?): barcode, brand_code
+end note
+
+note right of receipts
+  Primary Key: id
+  Foreign Key: user_id → users.id
+end note
+
+note right of receipt_items
+  Primary Key: id (SERIAL)
+  Foreign Key: receipt_id → receipts.id
+  Foreign Key: brand_code → brands.brand_code
+end note
+
+@enduml
