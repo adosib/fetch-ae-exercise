@@ -1,6 +1,6 @@
-CREATE DATABASE fetchdb;
+--CREATE DATABASE fetchdb;
 
-DROP TABLE IF EXISTS fetchdb.public.users CASCADE; CREATE TABLE fetchdb.public.users (
+CREATE TABLE fetchdb.public.users (
     id TEXT PRIMARY KEY,
     active BOOLEAN NOT NULL,
     created_date TIMESTAMP NOT NULL,
@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS fetchdb.public.users CASCADE; CREATE TABLE fetchdb.public.u
     state TEXT
 );
 
-DROP TABLE IF EXISTS fetchdb.public.brands CASCADE; CREATE TABLE fetchdb.public.brands (
+CREATE TABLE fetchdb.public.brands (
     id TEXT PRIMARY KEY,
     barcode TEXT NOT NULL,
     category TEXT,
@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS fetchdb.public.brands CASCADE; CREATE TABLE fetchdb.public.
     brand_code TEXT
 );
 
-DROP TABLE IF EXISTS fetchdb.public.receipts CASCADE; CREATE TABLE fetchdb.public.receipts (
+CREATE TABLE fetchdb.public.receipts (
     id TEXT PRIMARY KEY,
     bonus_points_earned TEXT,
     bonus_points_earned_reason TEXT,
@@ -39,7 +39,7 @@ DROP TABLE IF EXISTS fetchdb.public.receipts CASCADE; CREATE TABLE fetchdb.publi
     user_id TEXT
 );
 
-DROP TABLE IF EXISTS fetchdb.public.receipt_items; CREATE TABLE fetchdb.public.receipt_items (
+CREATE TABLE fetchdb.public.receipt_items (
     id SERIAL PRIMARY KEY,
     receipt_id TEXT REFERENCES receipts (id) ON DELETE CASCADE,
     barcode TEXT,

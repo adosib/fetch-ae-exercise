@@ -1,6 +1,17 @@
 ## Processing
 The main processing that was performed was teasing out `rewardsReceiptItemList` from the receipts JSON objects in order to load a table I'm calling receipt_items. Sure, Postgres can store JSON arrays, but separating this data into its own model is cleaner and will make querying easier and faster.
 
+## Running locally
+You should be able to set up the Postgres database if you have Docker. Just clone the repo and from the root run `docker compose up`
+
+If everything works, the Postgres container will spin up, and a python container will also spin up to load the database (it shuts down after the load is complete).
+
+You can then access the postgres container as you normally would, though the host will not be localhost.
+
+<p align="center">
+<img src="./assets/postgres-container.png" />
+</p>
+
 ## Part One: a New Structured Relational Data Model
 
 This is the relationship model I was able to infer:

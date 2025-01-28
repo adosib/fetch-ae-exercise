@@ -13,6 +13,7 @@ the JSON schema files:
 - schemas/receipts_schema.json
 """
 
+import os
 import sys
 import json
 import logging
@@ -28,11 +29,11 @@ DATA_DIR = ROOT_DIR / "data"
 
 # Database connection parameters
 DB_CONFIG = {
-    "dbname": "fetchdb",
-    "user": "postgres",
-    "password": "",
-    "host": "localhost",
-    "port": "5432",
+    "dbname": os.getenv("POSTGRES_DB", "fetchdb"),
+    "user": os.getenv("POSTGRES_USER", "postgres"),
+    "password": os.getenv("POSTGRES_PASSWORD", ""),
+    "host": os.getenv("POSTGRES_HOST", "localhost"),
+    "port": os.getenv("POSTGRES_PORT", "5432"),
 }
 
 

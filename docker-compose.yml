@@ -1,0 +1,33 @@
+services:
+
+  postgres:
+    image: postgres:latest
+    container_name: fetch-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: fetchdb
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - 5432:5432
+    volumes:
+      - ./schemas/ddl.sql:/docker-entrypoint-initdb.d/ddl.sql
+
+  app:
+    container_name: fetch-python
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    volumes:
+      - ./logs:/fetch-exercise/logs
+      - ./data:/fetch-exercise/data
+      - ./schemas:/fetch-exercise/schemas
+      - ./scripts:/fetch-exercise/scripts
+    working_dir: /fetch-exercise
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_DB: fetchdb
+    command: ["./wait-for-it.sh", "postgres:5432", "--", "uv", "run", "scripts/load_db.py"]
