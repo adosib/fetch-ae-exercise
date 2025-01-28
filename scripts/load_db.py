@@ -40,7 +40,6 @@ def insert_user(cursor, json_obj):
     insert_stmt = sql.SQL(
         "INSERT INTO users (id, active, created_date, last_login, user_role, sign_up_source, state) "
         "VALUES (%(id)s, %(active)s, %(created_date)s, %(last_login)s, %(user_role)s, %(sign_up_source)s, %(state)s) "
-        "ON CONFLICT DO NOTHING"
     )
     cursor.execute(
         insert_stmt,
@@ -60,7 +59,6 @@ def insert_brand(cursor, json_obj):
     insert_stmt = sql.SQL(
         "INSERT INTO brands (id, barcode, category, category_code, cpg_id, cpg_ref, name, top_brand, brand_code) "
         "VALUES (%(id)s, %(barcode)s, %(category)s, %(category_code)s, %(cpg_id)s, %(cpg_ref)s, %(name)s, %(top_brand)s, %(brand_code)s) "
-        "ON CONFLICT DO NOTHING"
     )
     cursor.execute(
         insert_stmt,
@@ -82,7 +80,6 @@ def insert_receipt(cursor, json_obj):
     insert_stmt = sql.SQL(
         "INSERT INTO receipts (id, bonus_points_earned, bonus_points_earned_reason, create_date, date_scanned, finished_date, modify_date, points_awarded_date, points_earned, purchase_date, purchased_item_count, rewards_receipt_status, total_spent, user_id) "
         "VALUES (%(id)s, %(bonus_points_earned)s, %(bonus_points_earned_reason)s, %(create_date)s, %(date_scanned)s, %(finished_date)s, %(modify_date)s, %(points_awarded_date)s, %(points_earned)s, %(purchase_date)s, %(purchased_item_count)s, %(rewards_receipt_status)s, %(total_spent)s, %(user_id)s) "
-        "ON CONFLICT DO NOTHING"
     )
     cursor.execute(
         insert_stmt,
@@ -109,7 +106,6 @@ def insert_receipt_items(cursor, receipt_id, items):
     insert_stmt = """
         INSERT INTO receipt_items (receipt_id, barcode, description, final_price, item_price, needs_fetch_review, partner_item_id, prevent_target_gap_points, quantity_purchased, user_flagged_barcode, user_flagged_new_item, user_flagged_price, user_flagged_quantity, needs_fetch_review_reason, points_not_awarded_reason, points_payer_id, rewards_group, rewards_product_partner_id, user_flagged_description, original_meta_brite_barcode, original_meta_brite_description, brand_code, competitor_rewards_group, discounted_item_price, original_receipt_item_text, item_number, original_meta_brite_quantity_purchased, points_earned, target_price, competitive_product, original_final_price, original_meta_brite_item_price, deleted, price_after_coupon, metabrite_campaign_id) 
         VALUES (%(receipt_id)s, %(barcode)s, %(description)s, %(final_price)s, %(item_price)s, %(needs_fetch_review)s, %(partner_item_id)s, %(prevent_target_gap_points)s, %(quantity_purchased)s, %(user_flagged_barcode)s, %(user_flagged_new_item)s, %(user_flagged_price)s, %(user_flagged_quantity)s, %(needs_fetch_review_reason)s, %(points_not_awarded_reason)s, %(points_payer_id)s, %(rewards_group)s, %(rewards_product_partner_id)s, %(user_flagged_description)s, %(original_meta_brite_barcode)s, %(original_meta_brite_description)s, %(brand_code)s, %(competitor_rewards_group)s, %(discounted_item_price)s, %(original_receipt_item_text)s, %(item_number)s, %(original_meta_brite_quantity_purchased)s, %(points_earned)s, %(target_price)s, %(competitive_product)s, %(original_final_price)s, %(original_meta_brite_item_price)s, %(deleted)s, %(price_after_coupon)s, %(metabrite_campaign_id)s)
-        ON CONFLICT DO NOTHING
     """
     for item in items:
         cursor.execute(
