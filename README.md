@@ -205,7 +205,7 @@ Just GOODNITES and HUGGIES, however. The other duplicates and NULLs and the empt
 In the case of brands, I decided to remove the UNIQUE constraint for the sake of having the data (plus I'm not positive the barcode HAS to be unique - I lack that domain knowledge), but for users I kept the constraint, meaning that the first record in the source file made its way to the database while the duplicates were silently ignored (well, they're logged).
 
 Some other quality checks:
-- Does receipts.total_spent line up with the sum of receipt items final_price?
+- Does `receipts.total_spent` line up with the sum of receipt items `final_price`?
   - There are a handful of cases where it does not:
 
   ```sql
@@ -223,17 +223,17 @@ Some other quality checks:
 - Along the same vein, the sum of `receipt_items.quantity_purchased` and the max of `receipts.purchased_item_count` don't line up (and it's apparently even worse when coalescing with `user_flagged_quantity` i.e. `sum(coalesce(ri.quantity_purchased::numeric, ri.user_flagged_quantity::numeric))`)
 - This one's kind of fun: users who scanned an item before they were created as users in the system. Maybe not impossible if you can retroactively tie a past transaction to a user *after* they've signed up. Most of the differences come down to milliseconds, but some like user 5ff793dd04929111f6e90c69 are days apart:
 
-```sql
-with first_scans as (
-select *, min(date_scanned) over (partition by user_id) first_scan_dt
-from receipts r 
-)
-select u.id, created_date - fs.first_scan_dt
-from first_scans fs 
-join users u
-	on u.id = fs.user_id
-where u.created_date > fs.first_scan_dt
-```
+  ```sql
+  with first_scans as (
+  select *, min(date_scanned) over (partition by user_id) first_scan_dt
+  from receipts r 
+  )
+  select u.id, created_date - fs.first_scan_dt
+  from first_scans fs 
+  join users u
+    on u.id = fs.user_id
+  where u.created_date > fs.first_scan_dt
+  ```
 
 I'm sure there's more DQ issues to find but I have to stop at some point :)
 
