@@ -21,7 +21,7 @@ from pathlib import Path
 from datetime import datetime
 
 from psycopg import Connection, sql
-from infer_schema import decode
+from infer_schema import decode, extract_tar_gz
 
 THIS_DIR = Path(__file__).parent
 ROOT_DIR = (THIS_DIR / "..").resolve()
@@ -217,4 +217,6 @@ if __name__ == "__main__":
     with Connection.connect(**DB_CONFIG) as dbconn:
         with dbconn.cursor() as dbcur:
             for file_path, process_fn in PROCESSOR_MAP.items():
+                if not file_path.exists():
+                    extract_tar_gz(f"{file_path}.gz", file_path)
                 process_and_insert_data(file_path, process_fn)
